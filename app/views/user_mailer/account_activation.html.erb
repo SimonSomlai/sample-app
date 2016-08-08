@@ -1,0 +1,7 @@
+<h1>Account Activation</h1>
+
+<p>
+  <%= @greeting %>, you're receiving this mail since you signed up at <a href="https://sample-app-rort.herokuapp.com/login">Our Sample App</a>. This is your account activation link.
+
+  <%= link_to "Click Here To Activate Your Account", edit_account_activation_url(@user.activation_token, email: @user.email), target: "_blank" %>
+</p>

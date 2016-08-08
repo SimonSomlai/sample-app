@@ -1,0 +1,425 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul{
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{
+    text-decoration: none;
+}
+ /*---- 
+@extend .message; - copies css from .message element
+@include transition(3s); - include transition from mixin
+&:hover - nested action on hover of the element 
+@import 'reset'; - includes the reset.scss in current sheet
+%bg-image{CODE}; - includes an element that can be extended from, but will not be included in final css 
+background-color:lighten($color,10%); - Lightens color (good for hovers!)
+-----*/
+/* Mixin Functions */
+/* Color Palette */
+/* Default class-naming 
+Collumns: .function-col
+List: .function-list;  
+*/
+/*---------------------*/
+/* STRUCTURE & GENERAL */
+/*---------------------*/
+/* line 82, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* line 87, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #646E76;
+}
+
+/* line 92, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+body a {
+  text-decoration: none;
+  color: #646E76;
+}
+
+/*Clearfix*/
+/* line 98, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+/* line 104, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 108, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.user-name {
+  margin: 0;
+}
+
+/* line 112, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+hr {
+  clear: both;
+  margin-bottom: 10px !important;
+}
+
+/* line 117, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 125, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+#error_explanation {
+  color: red;
+}
+/* line 127, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+#error_explanation ul {
+  list-style: initial;
+  color: red;
+}
+/* line 131, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+#error_explanation ul li {
+  list-style: initial;
+}
+
+/*---------------------*/
+/*    HEADER & NAV     */
+/*---------------------*/
+/* Title */
+/* line 140, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.title-col {
+  font-size: 3rem;
+}
+
+/* Navbar */
+/* line 145, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  float: right;
+  border: none;
+}
+
+/* line 151, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  width: 80%;
+  height: 2px;
+  background-color: #646E76;
+  margin: 3px auto;
+}
+
+/* line 158, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.navbar.navbar-default {
+  border: none;
+  margin-bottom: 0;
+  background-color: #ffffff;
+}
+
+/* line 164, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.navbar-toggle {
+  height: 50px;
+  width: 72px;
+  margin-top: 15px;
+  float: none;
+}
+
+/* Navbar media queries*/
+@media (max-width: 768px) {
+  /* line 173, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+  .navbar.navbar-default {
+    text-align: center;
+  }
+
+  /* line 176, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+  .navbar-default .navbar-toggle {
+    position: static;
+    float: none;
+  }
+
+  /* line 180, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    float: none !important;
+    text-align: center;
+  }
+}
+/*---------------------*/
+/*      SIDEBAR        */
+/*---------------------*/
+/* line 191, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+aside section.user_info {
+  margin-top: 20px;
+}
+/* line 195, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+aside section:first-child {
+  border: 0;
+  padding-top: 0;
+}
+/* line 199, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+aside section span {
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1;
+}
+/* line 204, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+aside section h1 {
+  font-size: 1.4em;
+  text-align: left;
+  letter-spacing: -1px;
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+
+/* line 214, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 219, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.gravatar-home {
+  text-align: center;
+  float: none;
+  margin-right: 10px;
+}
+
+/* line 225, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* line 229, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+}
+/* line 233, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.stats a {
+  float: none;
+  padding: 0 10px;
+  border-left: 1px solid gray;
+  color: gray;
+}
+/* line 238, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.stats a:first-child {
+  padding-left: 0;
+  border: 0;
+}
+/* line 242, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.stats a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+/* line 249, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.user-avatars {
+  overflow: auto;
+  margin-top: 10px;
+}
+/* line 252, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.user-avatars .gravatar {
+  margin: 1px 1px;
+}
+/* line 255, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.user-avatars a {
+  padding: 0;
+}
+
+/* line 260, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.users.follow {
+  padding: 0;
+}
+
+/* line 264, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.btn.btn-primary {
+  margin-top: 15px;
+}
+
+/*---------------------*/
+/*      CONTENT        */
+/*---------------------*/
+/* ------------------------------ HOMEPAGE  ------------------------------------*/
+/* line 272, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.homepage a {
+  width: 250px;
+}
+
+/* line 276, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.homepage-container {
+  padding-top: 9%;
+}
+
+/* line 280, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.gravatar {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* ------------------------------ USERS#SHOW  ------------------------------------*/
+/* line 286, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts {
+  list-style: none;
+  padding: 0;
+}
+/* line 289, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts li {
+  padding: 10px 0px;
+  border-top: 1px solid #e8e8e8;
+}
+/* line 293, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts .user {
+  margin-top: 5em;
+  padding-top: 0;
+}
+/* line 297, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts .content {
+  display: block;
+  margin-left: 60px;
+}
+/* line 300, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts .content img {
+  display: block;
+  padding: 5px 0px;
+}
+/* line 305, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts .timestamp {
+  display: block;
+  margin-left: 60px;
+}
+/* line 309, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.microposts .gravatar {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* line 317, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+/* line 323, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+span.picture {
+  margin-top: 10px;
+}
+/* line 325, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+span.picture input {
+  border: 0;
+}
+
+/* line 330, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.following-mini, .followers-mini {
+  margin-top: 10px;
+}
+
+/* line 334, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.following-mini li, .followers-mini li {
+  float: left;
+}
+
+/* line 338, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.following-mini img, .followers-mini img {
+  padding: 2px;
+  margin: 0;
+}
+
+/* ------------------------------ SESSIONS#NEW  ------------------------------------*/
+/* line 345, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.checkbox {
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+/* line 348, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.checkbox span {
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+/* line 354, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+#session_remember_me {
+  display: inline;
+  width: auto;
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
+
+/*---------------------*/
+/*      FOOTER         */
+/*---------------------*/
+/* line 364, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.footer-links-list {
+  float: right;
+}
+
+/* line 368, C:/Users/Simon/Desktop/Projects/Programming/Bitbucket/sample_app/app/assets/stylesheets/style.scss */
+.footer-links-list li {
+  display: inline;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */

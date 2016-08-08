@@ -1,0 +1,48 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+most_recent:
+  content: This is the first one
+  created_at: <%= Time.zone.now %>
+  user: michael
+
+tau_manifesto:
+  content: "This is the fourth one"
+  created_at: <%= 10.years.ago %>
+  user: michael
+
+cat_video:
+  content: "This is the third one"
+  created_at: <%= 2.years.ago %>
+  user: michael
+
+ants:
+  content: "That's how you get ants!"
+  created_at: <%= 3.days.ago %>
+  user: simon
+
+zone:
+  content: "I'm in the zone right now!"
+  created_at: <%= 10.minutes.ago %>
+  user: simon
+
+tone:
+  content: "your sarcastic tone is not appreciated"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  content: "Dude, this is awesome"
+  created_at: <%= 10.minutes.ago %>
+  user: mallory
+
+orange:
+  content: "This is the second one"
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: michael
+<% end %>

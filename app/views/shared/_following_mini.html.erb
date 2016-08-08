@@ -1,0 +1,7 @@
+<ol class="following-mini">
+	<h4> Following </h4>
+   <% @following.each do |following| %>
+   <li class="cf" id="following-<%= following.id %>">
+      <%= link_to gravatar_for(following, "35x40"), user_path(following) %>
+      <% end %>
+</ol>

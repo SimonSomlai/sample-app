@@ -1,0 +1,3 @@
+<%= @greeting %>, you're receiving this mail since you signed up at Our Sample App. This is your account activation link. Copy and paste the link below in your browser to activate your account;
+
+  <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

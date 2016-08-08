@@ -1,0 +1,369 @@
+ /*---- 
+@extend .message; - copies css from .message element
+@include transition(3s); - include transition from mixin
+&:hover - nested action on hover of the element 
+@import 'reset'; - includes the reset.scss in current sheet
+%bg-image{CODE}; - includes an element that can be extended from, but will not be included in final css 
+background-color:lighten($color,10%); - Lightens color (good for hovers!)
+-----*/
+ /* Mixin Functions */
+ 
+ @mixin border-radius($radius) {
+     -webkit-border-radius: $radius;
+     border-radius: $radius;
+     background-clip: padding-box;
+ }
+ 
+ @mixin border-top-radius($radius) {
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+ }
+ 
+ @mixin border-right-radius($radius) {
+     -webkit-border-bottom-right-radius: $radius;
+     border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+ }
+ 
+ @mixin border-bottom-radius($radius) {
+     -webkit-border-bottom-right-radius: $radius;
+     border-bottom-right-radius: $radius;
+     -webkit-border-bottom-left-radius: $radius;
+     border-bottom-left-radius: $radius;
+     background-clip: padding-box;
+ }
+ 
+ @mixin border-left-radius($radius) {
+     -webkit-border-bottom-left-radius: $radius;
+     border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+ }
+ 
+ @mixin transition ($time) {
+     -webkit-transition: all $time ease-in-out;
+     -moz-transition: all $time ease-in-out;
+     -o-transition: all $time ease-in-out;
+     transition: all $time ease-in-out;
+ }
+ 
+ @mixin box-shadow($top, $left, $blur, $color) {
+     -webkit-box-shadow: $top $left $blur $color;
+     -moz-box-shadow: $top $left $blur $color;
+     box-shadow: $top $left $blur $color;
+ }
+ 
+ @mixin box-sizing {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+ /* Color Palette */
+ 
+ $white: #ffffff;
+ $text: #646E76;
+ $primary: #39ADD1;
+ $secondary: #5FCF80;
+ /* Default class-naming 
+ Collumns: .function-col
+ List: .function-list;  
+ */
+ /*---------------------*/
+ /* STRUCTURE & GENERAL */
+ /*---------------------*/
+ 
+ html {
+     position: relative;
+     min-height: 100%;
+ }
+ 
+ body {
+     font-family: "Roboto", sans-serif;
+     color: $text;
+ }
+ 
+ body a {
+     text-decoration: none;
+     color: $text;
+ }
+ /*Clearfix*/
+ 
+ .cf:before,
+ .cf:after {
+     content: "";
+     display: table;
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
+ 
+ .user-name {
+     margin: 0;
+ }
+ 
+ hr {
+     clear: both;
+     margin-bottom: 10px !important;
+ }
+ 
+ .debug_dump {
+     clear: both;
+     float: left;
+     width: 100%;
+     margin-top: 45px;
+     @include box-sizing;
+ }
+ 
+ #error_explanation {
+     color: red;
+     ul {
+         list-style: initial;
+         color: red;
+     }
+     ul li {
+         list-style: initial;
+     }
+ }
+ /*---------------------*/
+ /*    HEADER & NAV     */
+ /*---------------------*/
+ /* Title */
+ 
+ .title-col {
+     font-size: 3rem;
+ }
+ /* Navbar */
+ 
+ .navbar-default .navbar-collapse,
+ .navbar-default .navbar-form {
+     float: right;
+     border: none;
+ }
+ 
+ .navbar-default .navbar-toggle .icon-bar {
+     width: 80%;
+     height: 2px;
+     background-color: #646E76;
+     margin: 3px auto;
+ }
+ 
+ .navbar.navbar-default {
+     border: none;
+     margin-bottom: 0;
+     background-color: #ffffff;
+ }
+ 
+ .navbar-toggle {
+     height: 50px;
+     width: 72px;
+     margin-top: 15px;
+     float: none;
+ }
+ /* Navbar media queries*/
+ 
+ @media (max-width: 768px) {
+     .navbar.navbar-default {
+         text-align: center;
+     }
+     .navbar-default .navbar-toggle {
+         position: static;
+         float: none;
+     }
+     .navbar-default .navbar-collapse,
+     .navbar-default .navbar-form {
+         float: none !important;
+         text-align: center;
+     }
+ }
+ /*---------------------*/
+ /*      SIDEBAR        */
+ /*---------------------*/
+ 
+ aside {
+     section.user_info {
+         margin-top: 20px;
+     }
+     section {
+         &:first-child {
+             border: 0;
+             padding-top: 0;
+         }
+         span {
+             display: block;
+             margin-bottom: 3px;
+             line-height: 1;
+         }
+         h1 {
+             font-size: 1.4em;
+             text-align: left;
+             letter-spacing: -1px;
+             margin-bottom: 3px;
+             margin-top: 0;
+         }
+     }
+ }
+ 
+ .gravatar {
+     float: left;
+     margin-right: 10px;
+ }
+ 
+ .gravatar-home {
+     text-align: center;
+     float: none;
+     margin-right: 10px;
+ }
+ 
+ .gravatar_edit {
+     margin-top: 15px;
+ }
+ 
+ .stats {
+     overflow: auto;
+     margin-top: 0;
+     padding: 0;
+     a {
+         float: none;
+         padding: 0 10px;
+         border-left: 1px solid gray;
+         color: gray;
+         &:first-child {
+             padding-left: 0;
+             border: 0;
+         }
+         &:hover {
+             text-decoration: none;
+             color: blue;
+         }
+     }
+ }
+ 
+ .user-avatars {
+     overflow: auto;
+     margin-top: 10px;
+     .gravatar {
+         margin: 1px 1px;
+     }
+     a {
+         padding: 0;
+     }
+ }
+
+ .users.follow{
+    padding: 0;
+ }
+
+ .btn.btn-primary{
+    margin-top: 15px;
+ }
+ /*---------------------*/
+ /*      CONTENT        */
+ /*---------------------*/
+ /* ------------------------------ HOMEPAGE  ------------------------------------*/
+ 
+ .homepage a {
+     width: 250px;
+ }
+ 
+ .homepage-container {
+     padding-top: 9%;
+ }
+ 
+ .gravatar {
+     text-align: center;
+     padding-bottom: 10px;
+ }
+ /* ------------------------------ USERS#SHOW  ------------------------------------*/
+ 
+ .microposts {
+     list-style: none;
+     padding: 0;
+     li {
+         padding: 10px 0px;
+         border-top: 1px solid #e8e8e8;
+     }
+     .user {
+         margin-top: 5em;
+         padding-top: 0;
+     }
+     .content {
+         display: block;
+         margin-left: 60px;
+         img {
+             display: block;
+             padding: 5px 0px;
+         }
+     }
+     .timestamp {
+         display: block;
+         margin-left: 60px;
+     }
+     .gravatar {
+         float: left;
+         margin-right: 10px;
+         margin-top: 5px;
+     }
+ }
+ 
+ aside {
+     textarea {
+         height: 100px;
+         margin-bottom: 5px;
+     }
+ }
+ 
+ span.picture {
+     margin-top: 10px;
+     input {
+         border: 0;
+     }
+ }
+
+.following-mini, .followers-mini{
+    margin-top: 10px;
+}
+
+ .following-mini li, .followers-mini li{
+    float: left;
+ }
+
+ .following-mini img, .followers-mini img{
+    padding: 2px;
+    margin: 0;
+ }
+
+ /* ------------------------------ SESSIONS#NEW  ------------------------------------*/
+ 
+ .checkbox {
+     vertical-align: middle;
+     margin-bottom: 2px;
+     span {
+         margin-left: 20px;
+         font-weight: normal;
+     }
+ }
+ 
+ #session_remember_me {
+     display: inline;
+     width: auto;
+     margin-right: 5px;
+     margin-bottom: 4px;
+ }
+ /*---------------------*/
+ /*      FOOTER         */
+ /*---------------------*/
+ 
+ .footer-links-list {
+     float: right;
+ }
+ 
+ .footer-links-list li {
+     display: inline;
+ }

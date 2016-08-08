@@ -1,0 +1,7 @@
+<%= link_to image_tag(user_gravatar_url(user), class: "gravatar"), user %>
+<h2 class="user-name"><%= link_to user.name, user_path(user), :class => "user-name" %></h2>
+<p><%= user.email %></p>
+<% if current_admin?(current_user) %>
+<%= link_to("Delete User", user_path(user) , :method => "delete") %>
+<% end %>
+<hr/>

@@ -1,0 +1,30 @@
+<% content_for :title, @user.name %>
+<div class="container">
+   <div class="row">
+      <aside class="col-md-4">
+         <section class="user_info cf">
+            <h1>
+               <%= gravatar_for @user %>
+               <%= @user.name %>
+            </h1>
+            <p><%= @user.email %></p>
+         </section>
+         <section class="stats">
+            <%= render "shared/stats" %>
+         </section>
+         <section class="micropost_form">
+          <%= render "shared/micropost_form" %>
+         </section>
+      </aside>
+      <div class="col-md-8">
+         <%= render "shared/follow_form" if logged_in? %>
+         <% if @user.microposts.any?  %>
+         <h3>My Microposts (<%= @user.microposts.count %>)</h3>
+         <ol class="microposts">
+            <%= render @microposts %>
+         </ol>
+         <%= will_paginate @microposts %>
+         <% end %>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,11 @@
+<h3> People Following Me (<%= @user.followers.count %>)</h3>
+<ol class="followers">
+   <% @followers.each do |followers| %>
+   <li class="cf" id="followers-<%= followers.id %>">
+      <%= link_to gravatar_for(followers, "45x55"), user_path(followers) %>
+      <span class="user"><%= link_to(followers.name, user_path(followers)) %></span>
+      <hr/>
+   </li>
+   <% end %>
+</ol>
+<%= will_paginate @followers %>
