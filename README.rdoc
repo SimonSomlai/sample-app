@@ -1,5 +1,0 @@
-<b> Sample App Homepage </b>
-http://www.basicgrowth.com/wp-content/uploads/2016/07/sample-app.png
-
-<b> User Show </b>
-http://www.basicgrowth.com/wp-content/uploads/2016/08/user-single.png
